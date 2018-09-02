@@ -90,6 +90,11 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 对于自己安装的软件：
 参阅docker commit命令，打包自己的镜像即可。
 ```
+- 运行docker提示我权限不足怎么办？
+```
+此问题一般出现在linux上。由于使用sudo命令安装docker，当使用一般用户运行时会提示权限不足。需要在docker前加sudo命令。
+若要避免此问题，可执行`sudo gpasswd -a ${USER} docker`，将当前用户加入到docker组，随后重启docker服务即可。若提示docker组不存在，则`sudo groupadd docker`即可。
+```
 
 ## contact me
 - email：yuanfangsee@pku.edu.cn
