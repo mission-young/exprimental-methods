@@ -36,6 +36,7 @@
     ```
   - linux
     * 添加docker运行参数
+    `xhost +`必不可少
     `-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY`
 4. 进行数据分析环境
    ```
