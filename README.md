@@ -8,6 +8,13 @@
 4. 严格按照规范进行操作，由于违规操作引起的数据丢失概不负责！
 
 ## 数据分析框架搭建
+### windows
+  - 从官网下载docker安装包，安装时选择linux-docker.
+  - 安装concology，并安装xsv。
+  - 设置xauth
+  - 设置端口转发
+### linux
+### macOS
 1. windows、linux、macOS 自行安装docker.
    - windows,macOS [下载链接](https://www.docker.com/get-started)
    - linux系通过自带包管理器或其他方式安装.
@@ -28,7 +35,7 @@
     ```
     * Check macOS's ip
     ```
-    export MAC_IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    export MAC_IP=$(ifconfig vnic0 | grep inet | awk '$1=="inet" {print $2}')
     ```
     * Add X11 authority (optional)
     ```bash
@@ -62,8 +69,9 @@
    ```
    随后即可简化命令
    ```bash
-   docker run -it -p 8000:8888 anaenv  (macOS)
-   docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 (linux)
+   xhost + && export host_ip=$(ifconfig vnic0 | grep inet | awk '$1=="inet" {print $2}') && docker run -it -p 8000:8888 -e DISPLAY=$(host_ip):0.0 anaenv  (macOS)
+   xhost + && docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 anaenv (linux)
+   docker run -it -p 8000:8888 -e DISPLAY=$(默认交换机的ip地址):0.0 anaenv (windows)
    ```
    若如果需要保留数据文件，或分析本机数据，需要将本机文件挂载到docker中。
    ```bash
