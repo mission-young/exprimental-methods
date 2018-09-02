@@ -61,6 +61,10 @@
    ```bash
    docker run -it -p 8000:8888 anaenv
    ```
+   若如果需要保留数据文件，或分析本机数据，需要将本机文件挂载到docker中。
+   ```bash
+   docker run -it -v $(host_path):$(docker_path) -p $(host_port):$(docker_server_port) anaenv
+   ```
 5. 分析环境包含内容：
    - root6.12.04 compiled with python3
    - python3
@@ -86,6 +90,7 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 对于自己安装的软件：
 参阅docker commit命令，打包自己的镜像即可。
 ```
+
 ## contact me
 - email：yuanfangsee@pku.edu.cn
 - phone: 18511281625
