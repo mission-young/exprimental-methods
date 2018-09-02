@@ -16,7 +16,7 @@
 获得镜像。
 3. 设置x11转发。
   - macOS 
-    * [reference](https://hub.docker.com/r/playniuniu/docker-gui-firefox/)
+    * [reference](https://hub.docker.com/r/playniuniu/docker-gui-firefox/)(http://shaoguangleo.github.io/2018/01/21/docker-run-gui-on-macosx/)
     * pre-requirement
     ```bash
     brew cask install xquartz
