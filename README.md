@@ -87,6 +87,6 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 参阅docker commit命令，打包自己的镜像即可。
 ```
 ## contact me
-email：yuanfangsee@pku.edu.cn
-phone: 18511281625
-wechat: mission-young
+- email：yuanfangsee@pku.edu.cn
+- phone: 18511281625
+- wechat: mission-young
