@@ -34,7 +34,9 @@
     ```bash
     xhost + $MAC_IP
     ```
-
+  - linux
+    * 添加docker运行参数
+    `-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY`
 4. 进行数据分析环境
    ```
    docker run -it -p 8000:8888 registry.cn-beijing.aliyuncs.com/yfs2018/jupyroot:v1
@@ -59,7 +61,8 @@
    ```
    随后即可简化命令
    ```bash
-   docker run -it -p 8000:8888 anaenv
+   docker run -it -p 8000:8888 anaenv  (macOS)
+   docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 (linux)
    ```
    若如果需要保留数据文件，或分析本机数据，需要将本机文件挂载到docker中。
    ```bash
@@ -93,7 +96,7 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 - 运行docker提示我权限不足怎么办？
 ```
 此问题一般出现在linux上。由于使用sudo命令安装docker，当使用一般用户运行时会提示权限不足。需要在docker前加sudo命令。
-若要避免此问题，可执行`sudo gpasswd -a ${USER} docker`，将当前用户加入到docker组，随后重启docker服务即可。若提示docker组不存在，则`sudo groupadd docker`即可。
+若要避免此问题，可执行`sudo gpasswd -a ${USER} docker`，将当前用户加入到docker组，并修改相关文件权限。随后重启docker服务即可。若提示docker组不存在，则`sudo groupadd docker`即可。
 ```
 
 ## contact me
