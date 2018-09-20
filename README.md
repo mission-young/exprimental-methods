@@ -9,11 +9,15 @@
 
 ## 数据分析框架搭建
 ### windows
-  - 从官网下载docker安装包，安装时选择linux-docker.
-  - 安装concology，并安装xsv。
+  - 从官网下载docker安装包，安装时选择linux-docker. 
+  - win7(https://docs.docker.com/toolbox/overview/#whats-in-the-box)
+  - win10(https://store.docker.com/editions/community/docker-ce-desktop-windows) 
+  - 安装chocolatey，并安装xsv。(https://www.jianshu.com/p/c635e8bc085f) 安装好chocolatey后，在cmd或powershell执行 `cinst xsv`或`choco install xsv`
   - 设置xauth
   - 设置端口转发
 ### linux
+  - centos (https://docs.docker.com/install/linux/docker-ce/centos/)
+  - ubuntu (https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce-1)
 ### macOS
 1. windows、linux、macOS 自行安装docker.
    - windows,macOS [下载链接](https://www.docker.com/get-started)
