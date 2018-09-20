@@ -19,9 +19,8 @@
   - centos (https://docs.docker.com/install/linux/docker-ce/centos/)
   - ubuntu (https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce-1)
 ### macOS
-1. windows、linux、macOS 自行安装docker.
-   - windows,macOS [下载链接](https://www.docker.com/get-started)
-   - linux系通过自带包管理器或其他方式安装.
+   - macOS [下载链接](https://www.docker.com/get-started)
+
 2. 在终端(linux/macOS:terminal Windows:cmd/powershell)执行命令
 `docker pull registry.cn-beijing.aliyuncs.com/yfs2018/jupyroot:v1`
 获得镜像。
