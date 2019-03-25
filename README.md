@@ -110,7 +110,10 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 此问题一般出现在linux上。由于使用sudo命令安装docker，当使用一般用户运行时会提示权限不足。需要在docker前加sudo命令。
 若要避免此问题，可执行`sudo gpasswd -a ${USER} docker`，将当前用户加入到docker组，并修改相关文件权限。随后重启docker服务即可。若提示docker组不存在，则`sudo groupadd docker`即可。
 ```
-
+- xhost + 命令执行出错，类似于`xhost:  unable to open display "/private/tmp/com.apple.launchd.2Aoz4r2ZnI/org.macosforge.xquartz:0"`的提示怎么处理？
+```
+`xhost +` 是使所有用户都能访问`Xserver`. 为了避免数据库软件安装过程中会出现0.0的错误，应该执行`xhost +`,当使用`xhost +`报错时，`export DISPLAY=:0.0`,再执行即可.
+```
 ## contact me
 - email：yuanfangsee@pku.edu.cn
 - phone: 18511281625
