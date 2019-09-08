@@ -11,9 +11,12 @@
 
 1. 安装docker
   * windows https://www.runoob.com/docker/windows-docker-install.html
+    * [win7/win8]() （点击可直接下载） 
+    * [win10]() （点击可直接下载）
   * ubuntu https://www.runoob.com/docker/ubuntu-docker-install.html
   * centos https://www.runoob.com/docker/centos-docker-install.html
   * macOS https://www.runoob.com/docker/macos-docker-install.html
+    * homebrew安装方法 https://brew.sh/index_zh-cn
 ### windows
   - 从官网下载docker安装包，安装时选择linux-docker. 
   - win7(https://docs.docker.com/toolbox/overview/#whats-in-the-box)
