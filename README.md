@@ -9,53 +9,28 @@
 
 ## 数据分析框架搭建
 
-1. 前期准备--安装docker等软件
+1. 前期准备及配置
   * windows 
     * 安装docker https://www.runoob.com/docker/windows-docker-install.html
     * 拉取镜像。进入cmd或者powshell执行`docker pull yfs2018/jupyroot:v1`
     * 安装chocolatey，并安装xsv。(https://www.jianshu.com/p/c635e8bc085f) 安装好chocolatey后，在cmd或powershell执行 `cinst xsv`或`choco install xsv`
     * 安装Xming https://xming.en.softonic.com
-    * 
+    * 获取默认交换机的ip https://zhidao.baidu.com/question/1433778156685956859.html
   * linux
     * ubuntu安装docker https://www.runoob.com/docker/ubuntu-docker-install.html
     * centos安装docker https://www.runoob.com/docker/centos-docker-install.html
-    * 拉取镜像 
+    * 拉取镜像。进入terminal执行`docker pull yfs2018/jupyroot:v1`
+    * x11 authority `xhost +`
+    
   * macOS https://www.runoob.com/docker/macos-docker-install.html
     * homebrew安装方法 https://brew.sh/index_zh-cn
     * homebrew 安装 xquartz和socat     ` brew cask install xquartz` 和 `brew install socat`
     * x11转发 `socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"`
     * 获取本机ip https://jingyan.baidu.com/article/b0b63dbf3fefd14a48307013.html
     * x11 authority `xhost + (用本机ip替换)`
-
-3. 设置x11转发。
-
-  - linux
-    * 终端输入`xhost +`
-    * 添加docker运行参数
-    `-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY`
-4. 进行数据分析环境
-   ```
-   docker run -it -p 8000:8888 registry.cn-beijing.aliyuncs.com/yfs2018/jupyroot:v1
-   ```
-   由于镜像名过长，进行重命名方便后续分析
-   ```
-   docker image ls
-   
-   REPOSITORY                                          TAG                 IMAGE ID            CREATED             SIZE
-   registry.cn-beijing.aliyuncs.com/yfs2018/jupyroot   v1                  36b93fdf2267        2 hours ago         5.83GB
-   ```
-   提取出image id 36b93fdf2267
-   ```bash
-   docker tag 36b93fdf2267 anaenv
-   ```
-   ```bash
-   docker image ls
-   
-   REPOSITORY                                          TAG                 IMAGE ID            CREATED             SIZE
-   anaenv                                              latest              36b93fdf2267        2 hours ago         5.83GB
-   registry.cn-beijing.aliyuncs.com/yfs2018/jupyroot   v1                  36b93fdf2267        2 hours ago         5.83GB
-   ```
-   随后即可简化命令
+ 2. 进入数据分析环境
+  * windows
+  ```  
    ```bash
    xhost + && export host_ip=$(ifconfig vnic0 | grep inet | awk '$1=="inet" {print $2}') && docker run -it -p 8000:8888 -e DISPLAY=$(host_ip):0.0 anaenv  (macOS)
    xhost + && docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 anaenv (linux)
