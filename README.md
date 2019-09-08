@@ -9,30 +9,19 @@
 
 ## 数据分析框架搭建
 
-1. 安装docker
-  * windows https://www.runoob.com/docker/windows-docker-install.html
-    * [win7/win8]() （点击可直接下载） 
-    * [win10]() （点击可直接下载）
+1. 前期准备--安装docker等软件
+  * windows 
+    * 安装docker https://www.runoob.com/docker/windows-docker-install.html
+    * 安装chocolatey，并安装xsv。(https://www.jianshu.com/p/c635e8bc085f) 安装好chocolatey后，在cmd或powershell执行 `cinst xsv`或`choco install xsv`
+    * 安装Xming https://xming.en.softonic.com
   * ubuntu https://www.runoob.com/docker/ubuntu-docker-install.html
   * centos https://www.runoob.com/docker/centos-docker-install.html
   * macOS https://www.runoob.com/docker/macos-docker-install.html
     * homebrew安装方法 https://brew.sh/index_zh-cn
-### windows
-  - 从官网下载docker安装包，安装时选择linux-docker. 
-  - win7(https://docs.docker.com/toolbox/overview/#whats-in-the-box)
-  - win10(https://store.docker.com/editions/community/docker-ce-desktop-windows) 
-  - 安装chocolatey，并安装xsv。(https://www.jianshu.com/p/c635e8bc085f) 安装好chocolatey后，在cmd或powershell执行 `cinst xsv`或`choco install xsv`
-  - 设置xauth
-  - 设置端口转发
-### linux
-  - centos (https://docs.docker.com/install/linux/docker-ce/centos/)
-  - ubuntu (https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce-1)
-### macOS
-   - macOS [下载链接](https://www.docker.com/get-started)
-
-2. 在终端(linux/macOS:terminal Windows:cmd/powershell)执行命令
-`docker pull registry.cn-beijing.aliyuncs.com/yfs2018/jupyroot:v1`
-获得镜像。
+    * homebrew 安装 xquartz和socat     ` brew cask install xquartz` 和 `brew install socat`
+    
+2. 从dockerhub上拉取镜像文件
+  * 在终端(linux/macOS:terminal Windows:cmd/powershell)执行命令 `docker pull yfs2018/jupyroot:v1`获得镜像。
 3. 设置x11转发。
   - macOS 
     * [reference](https://hub.docker.com/r/playniuniu/docker-gui-firefox/)(http://shaoguangleo.github.io/2018/01/21/docker-run-gui-on-macosx/)
