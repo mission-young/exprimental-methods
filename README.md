@@ -12,40 +12,23 @@
 1. 前期准备--安装docker等软件
   * windows 
     * 安装docker https://www.runoob.com/docker/windows-docker-install.html
+    * 拉取镜像。进入cmd或者powshell执行`docker pull yfs2018/jupyroot:v1`
     * 安装chocolatey，并安装xsv。(https://www.jianshu.com/p/c635e8bc085f) 安装好chocolatey后，在cmd或powershell执行 `cinst xsv`或`choco install xsv`
     * 安装Xming https://xming.en.softonic.com
-  * ubuntu https://www.runoob.com/docker/ubuntu-docker-install.html
     * 
-  * centos https://www.runoob.com/docker/centos-docker-install.html
-  
+  * linux
+    * ubuntu安装docker https://www.runoob.com/docker/ubuntu-docker-install.html
+    * centos安装docker https://www.runoob.com/docker/centos-docker-install.html
+    * 拉取镜像 
   * macOS https://www.runoob.com/docker/macos-docker-install.html
     * homebrew安装方法 https://brew.sh/index_zh-cn
     * homebrew 安装 xquartz和socat     ` brew cask install xquartz` 和 `brew install socat`
     * x11转发 `socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"`
     * 获取本机ip https://jingyan.baidu.com/article/b0b63dbf3fefd14a48307013.html
     * x11 authority `xhost + (用本机ip替换)`
-2. 从dockerhub上拉取镜像文件
-  * 在终端(linux/macOS:terminal Windows:cmd/powershell)执行命令 `docker pull yfs2018/jupyroot:v1`获得镜像。
+
 3. 设置x11转发。
-  - macOS 
-    * [reference](https://hub.docker.com/r/playniuniu/docker-gui-firefox/)(http://shaoguangleo.github.io/2018/01/21/docker-run-gui-on-macosx/)
-    * pre-requirement
-    ```bash
-    brew cask install xquartz
-    brew install socat
-    ```
-    * Forward X11 socket
-    ```
-    socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
-    ```
-    * Check macOS's ip
-    ```
-    export MAC_IP=$(ifconfig vnic0 | grep inet | awk '$1=="inet" {print $2}')
-    ```
-    * Add X11 authority (optional)
-    ```bash
-    xhost + $MAC_IP
-    ```
+
   - linux
     * 终端输入`xhost +`
     * 添加docker运行参数
