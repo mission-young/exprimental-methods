@@ -8,6 +8,12 @@
 4. 严格按照规范进行操作，由于违规操作引起的数据丢失概不负责！
 
 ## 数据分析框架搭建
+
+1. 安装docker
+  * windows https://www.runoob.com/docker/windows-docker-install.html
+  * ubuntu https://www.runoob.com/docker/ubuntu-docker-install.html
+  * centos https://www.runoob.com/docker/centos-docker-install.html
+  * macOS https://www.runoob.com/docker/macos-docker-install.html
 ### windows
   - 从官网下载docker安装包，安装时选择linux-docker. 
   - win7(https://docs.docker.com/toolbox/overview/#whats-in-the-box)
