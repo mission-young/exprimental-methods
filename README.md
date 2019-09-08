@@ -30,15 +30,15 @@
  2. 进入数据分析环境
   * windows
   ```bash
-  docker run -it -p 8000:8888 -e DISPLAY=(用默认交换机的ip地址替换):0.0 -v (用本机存放数据文件位置路径代替):(/notebook)  yfs2018/jupyroot:v1 
+  docker run -it -p 8000:8888 -e DISPLAY=用默认交换机的ip地址替换:0.0 -v 用本机存放数据文件位置路径代替:/notebook  yfs2018/jupyroot:v1 
   ```
   * linux
   ```bash
-  xhost + && docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 -v (用本机存放数据文件位置路径代替):(/notebook) yfs2018/jupyroot:v1
+  xhost + && docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 -v 用本机存放数据文件位置路径代替:/notebook yfs2018/jupyroot:v1
   ```
   * macOS
   ```bash
-  xhost + && docker run -it -p 8000:8888 -e DISPLAY=(用本机ip替代):0.0 -v (用本机存放数据文件位置路径代替):(/notebook) yfs2018/jupyroot:v1
+  xhost + && docker run -it -p 8000:8888 -e DISPLAY=(用本机ip替代):0.0 -v 用本机存放数据文件位置路径代替:/notebook yfs2018/jupyroot:v1
   ```
  
 5. 分析环境包含内容：
