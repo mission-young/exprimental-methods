@@ -20,34 +20,32 @@
     * ubuntu安装docker https://www.runoob.com/docker/ubuntu-docker-install.html
     * centos安装docker https://www.runoob.com/docker/centos-docker-install.html
     * 拉取镜像。进入terminal执行`docker pull yfs2018/jupyroot:v1`
-    * x11 authority `xhost +`
-    
+   
   * macOS https://www.runoob.com/docker/macos-docker-install.html
     * homebrew安装方法 https://brew.sh/index_zh-cn
     * homebrew 安装 xquartz和socat     ` brew cask install xquartz` 和 `brew install socat`
     * x11转发 `socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"`
     * 获取本机ip https://jingyan.baidu.com/article/b0b63dbf3fefd14a48307013.html
-    * x11 authority `xhost + (用本机ip替换)`
+
  2. 进入数据分析环境
   * windows
-  ```  
-   ```bash
-   xhost + && export host_ip=$(ifconfig vnic0 | grep inet | awk '$1=="inet" {print $2}') && docker run -it -p 8000:8888 -e DISPLAY=$(host_ip):0.0 anaenv  (macOS)
-   xhost + && docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 anaenv (linux)
-   docker run -it -p 8000:8888 -e DISPLAY=$(默认交换机的ip地址):0.0 anaenv (windows)
-   ```
-   若如果需要保留数据文件，或分析本机数据，需要将本机文件挂载到docker中。
-   ```bash
-   docker run -it -v $(host_path):$(docker_path) -p $(host_port):$(docker_server_port) anaenv
-   ```
+  ```bash
+  docker run -it -p 8000:8888 -e DISPLAY=(用默认交换机的ip地址替换):0.0 -v (用本机存放数据文件位置路径代替):(/notebook)  yfs2018/jupyroot:v1 
+  ```
+  * linux
+  ```bash
+  xhost + && docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 -v (用本机存放数据文件位置路径代替):(/notebook) yfs2018/jupyroot:v1
+  ```
+  * macOS
+  ```bash
+  xhost + && docker run -it -p 8000:8888 -e DISPLAY=(用本机ip替代):0.0 -v (用本机存放数据文件位置路径代替):(/notebook) yfs2018/jupyroot:v1
+  ```
+ 
 5. 分析环境包含内容：
-   - root6.12.04 compiled with python3
+   - root6.16.00 compiled with python3
    - python3
    - jupyter,ipython...
    
-## 课程内容补充及演示
-1. Interaction of Radiation with matter
-2. Statistics and the treatment of experimental data
 
 ## Q&A
 - 为什么使用docker技术？
