@@ -74,6 +74,9 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 `xhost +` 是使所有用户都能访问`Xserver`. 
 为了避免数据库软件安装过程中会出现0.0的错误，应该执行`xhost +`,当使用`xhost +`报错时，`export DISPLAY=:0.0`,再执行即可.
 ```
+- jupyter-notebook 密码？
+  `dataana`
+
 ## contact me
 - email：yuanfangsee@pku.edu.cn
 - phone: 18511281625
