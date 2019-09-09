@@ -32,6 +32,7 @@
   ```bash
   docker run -it -p 8000:8888 -e DISPLAY=用默认交换机的ip地址替换:0.0 -v 用本机存放数据文件位置路径代替:/notebook  yfs2018/jupyroot:v1 
   ```
+    * windows下本机路径要把反斜线改成斜线，如C:\Windows 更改为C:/Windows
   * linux
   ```bash
   xhost + && docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -p 8000:8888 -v 用本机存放数据文件位置路径代替:/notebook yfs2018/jupyroot:v1
