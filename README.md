@@ -13,7 +13,7 @@
   * windows 
     * 安装docker https://www.runoob.com/docker/windows-docker-install.html
     * 拉取镜像。进入cmd或者powshell执行`docker pull yfs2018/jupyroot:v1`
-    * 安装chocolatey，并安装xsv。(https://www.jianshu.com/p/c635e8bc085f) 安装好chocolatey后，在cmd或powershell执行 `cinst xsv`或`choco install xsv`
+    * 安装chocolatey，并安装xsv。(https://chocolatey.org/install) 安装好chocolatey后，在cmd或powershell执行 `cinst xsv`或`choco install xsv` 【此步若出现问题先行跳过，执行后续步骤】
     * 安装Xming https://xming.en.softonic.com
     * 获取默认交换机的ip https://zhidao.baidu.com/question/1433778156685956859.html
   * linux
