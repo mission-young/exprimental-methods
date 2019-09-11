@@ -78,6 +78,13 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 - jupyter-notebook 密码？
   `dataana`
 
+- 配置docker的流程太过复杂，能提供虚拟机版本么？
+```
+访问 https://pkuenp.quickconnect.cn/d/s/509132606843953153/gnOF_Y4_Q13MvT-ajMjsqxGZf9TPOdjf-DLtAuHr2EAc_
+下载镜像文件，密码为dataana。
+下载后双击导入virtualbox虚拟机即可。
+```
+
 ## contact me
 - email：yuanfangsee@pku.edu.cn
 - phone: 18511281625
