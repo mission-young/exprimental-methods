@@ -9,7 +9,7 @@
 
 ## 数据分析框架搭建
 
-### 虚拟机方案(入门方案)
+### 虚拟机方案(简易方案)
 
 ```
 访问 https://pkuenp.quickconnect.cn/d/s/509132606843953153/gnOF_Y4_Q13MvT-ajMjsqxGZf9TPOdjf-DLtAuHr2EAc_
