@@ -9,6 +9,14 @@
 
 ## 数据分析框架搭建
 
+### 虚拟机方案(入门方案)
+
+```
+访问 https://pkuenp.quickconnect.cn/d/s/509132606843953153/gnOF_Y4_Q13MvT-ajMjsqxGZf9TPOdjf-DLtAuHr2EAc_
+下载镜像文件，密码为dataana。
+下载后双击导入virtualbox虚拟机即可。
+```
+### docker方案(有一定基础的同学可以尝试一下)
 1. 前期准备及配置
   * windows 
     * 安装docker https://www.runoob.com/docker/windows-docker-install.html
@@ -78,12 +86,7 @@ do whatever you want. 镜像中给大家提供的是root权限，可以安装绝
 - jupyter-notebook 密码？
   `dataana`
 
-- 配置docker的流程太过复杂，能提供虚拟机版本么？
-```
-访问 https://pkuenp.quickconnect.cn/d/s/509132606843953153/gnOF_Y4_Q13MvT-ajMjsqxGZf9TPOdjf-DLtAuHr2EAc_
-下载镜像文件，密码为dataana。
-下载后双击导入virtualbox虚拟机即可。
-```
+
 
 ## contact me
 - email：yuanfangsee@pku.edu.cn
